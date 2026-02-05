@@ -1,0 +1,27 @@
+# Polymarket Stop-Loss Bot Configuration
+
+stop_loss:
+  # Percentage drop from entry price to trigger stop-loss
+  # Example: 10 means close position if price drops 10% below avgPrice
+  percentage: 10.0
+
+  # Minimum position size to monitor (in shares)
+  # Positions smaller than this are ignored
+  min_position_size: 1.0
+
+monitoring:
+  # How often to check positions (milliseconds)
+  # Can be overridden by POSITION_POLL_INTERVAL_MS env var
+  position_poll_interval_ms: 30000
+
+telegram:
+  enabled: true
+  notify_on_start: true
+  notify_on_stop_loss: true
+  notify_on_error: true
+
+logging:
+  level: INFO
+  file: logs/bot.log
+  max_size_mb: 10
+  backup_count: 5
